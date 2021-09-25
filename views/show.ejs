@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedex</title>
+    <title>Pokédex</title>
 </head>
 
 <body>
-    <h1>Pokemon Caught</h1>
+    <h1>Pokémon Caught</h1>
 
     <h2>
         <%=pokeAll.name%>
@@ -17,24 +17,21 @@
     <img src="<%=pokeAll.img%>" alt="pokeAll.name">
     <ul>
         <!-- loop to grab all types -->
+        <h3>Types</h3>
         <% pokeAll.type.forEach(t=> { %>
-            <li>
+            <li id="types">
                 <%=t%>
             </li>
             <% }); %>
+            <h3>Stats</h3>
             <%Object.entries(pokeAll.stats).forEach(entry => {%>
                 <%const [key, value] = entry;%>
-            <li><%=entry[0] = entry[0]%>: <%= entry[1] = entry[1]%></li>
+            <li id="stats"><%=entry[0] = entry[0]%>: <%= entry[1] = entry[1]%></li>
             <% }) %>
     </ul>
-    <!-- loop for each stat -->
-    
 
     <nav>
-        <a href="/pokedex"><button>Back to Pokedex</button></a>
+        <a href="/pokedex"><button>Back to Pokédex</button></a>
     </nav>
-
-
 </body>
-
 </html>

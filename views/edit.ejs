@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+</head>
+
+<body>
+    <h1>Change Pokémon</h1>
+
+    <form action="/pokedex/<%=index%>?_method=PUT" method="POST">
+        <h4>Name</h4>
+        <input type="text" name="name" value="<%=poke.name%>" /> <br>
+        <h4>Type</h4>
+        <input type="text" name="type" value="<%=poke.type%>"/> <br>
+        <h4>Image</h4>
+        <input type="image url" name="img" value="<%=poke.img%>"> <br>
+        <h4>HP</h4>
+        <input type="text" name="stats" value="<%=poke.stats.hp%>"/> <br>
+        <h4>Attack</h4>
+        <input type="text" name="stats" value="<%=poke.stats.attack%>"/> <br>
+        <h4>Defense</h4>
+        <input type="text" name="stats" value="<%=poke.defense%>"/> <br>
+        <h4>SPAttack</h4>
+        <input type="text" name="stats" value="<%=poke.spattack%>"/><br>
+        <h4>SPDefense</h4>
+        <input type="text" name="stats" value="<%=poke.spdefense%>"/><br>
+        <h4>Speed</h4>
+        <input type="text" name="stats" value="<%=poke.speed%>"/><br>
+        <input type="submit" value="Pokemon Changed!">
+    
+    </form>
+</body>
+</html>

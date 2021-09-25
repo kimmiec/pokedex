@@ -10,6 +10,13 @@ const port = 3000;
 const pokemons = require('./models/poke');
 
 //middlewares (app.use)
+app.use((req, res, next) =>{
+    console.log('pikachu i choose you!');
+    next();
+});
+
+app.use(express.urlencoded({extended:false}));
+
 
 
 // Routes:
@@ -19,7 +26,9 @@ app.get('/pokedex', (req, res) =>{
 });
 
 // New
-
+app.get('/pokedex/new', (req, res) =>{
+    res.render('new.ejs');
+});
 
 // Show
 app.get('/pokedex/:index', (req, res) =>{
@@ -29,10 +38,19 @@ app.get('/pokedex/:index', (req, res) =>{
 });
 
 // Create
+app.post('/pokedex', (req, res) =>{
+    pokemons.push(req.body);
+    res.redirect('/pokedex');
+})
 
 
 // Edit
-
+app.get('/pokedex/:index/edit', (req, res) =>{
+    res.render('edit.ejs', {
+        poke: pokemons[req.params.index],
+        index: req.params.index
+    })
+})
 
 // Update
 
