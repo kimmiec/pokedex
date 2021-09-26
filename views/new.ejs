@@ -5,23 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/skeleton.css">
+    <!-- <link rel="stylesheet" href="/style.css"> -->
     <title>Pokédex</title>
+    <style>
+        input {
+            border: 2px solid firebrick ;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>New Pokémon Found</h1>
+    <h1 id="newHead">New Pokémon Found</h1>
 
-    <form action="/pokedex" method="POST">
-        <input type="text" name="name" placeholder="name" />
-        <input type="text" name="type" placeholder="type"/>
-        <input type="image url" name="img" placeholder="img url">
-        <input type="text" name="stats" placeholder="hp"/>
-        <input type="text" name="stats" placeholder="attack"/>
-        <input type="text" name="stats" placeholder="defense"/>
-        <input type="text" name="stats" placeholder="spattack"/>
-        <input type="text" name="stats" placeholder="spdefense"/>
-        <input type="text" name="stats" placeholder="speed"/>
-        <input type="submit" value="Pokémon Added!">
+    <form id="newPage" action="/pokedex" method="POST">
+        <input type="text" name="name" placeholder="name" /> <br>
+        <input type="text" name="type" placeholder="type"/><br>
+        <input type="image url" name="img" placeholder="img url"><br>
+        <input type="text" name="stats" placeholder="hp"/><br>
+        <input type="text" name="stats" placeholder="attack"/><br>
+        <input type="text" name="stats" placeholder="defense"/><br>
+        <input type="text" name="stats" placeholder="spattack"/><br>
+        <input type="text" name="stats" placeholder="spdefense"/><br>
+        <input type="text" name="stats" placeholder="speed"/><br>
+        <input id="add" type="submit" value="Pokémon Added!">
     
     </form>
 </body>

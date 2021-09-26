@@ -7,14 +7,17 @@ const port = 3000;
 
 // ============== DATABASES ===============
 // original pokemon array
-// const pokemons = require('.models/pokemon');
+const pokemons = require('./models/pokemon');
 
 // 5 pokemon array
-const pokemons = require('./models/poke');
+// const pokemons = require('./models/poke');
 
 //middlewares (app.use)
+// ========== express static ============
+app.use(express.static('public'));
+
 app.use((req, res, next) =>{
-    // console.log('pikachu i choose you!');
+    console.log('pikachu i choose you!');
     next();
 });
 

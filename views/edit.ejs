@@ -5,32 +5,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/skeleton.css">
+    <!-- <link rel="stylesheet" href="/style.css"> -->
     <title>Pokédex</title>
+    <style>
+        input {
+            border: 2px solid rosybrown;
+        }
+        h5{
+            margin: -3px 0;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Change Pokémon</h1>
+    <h1 id="changeHead">Change Pokémon</h1>
 
-    <form action="/pokedex/<%= index %>?_method=PUT" method="POST">
-        <h4>Name</h4>
-        <input type="text" name="name" value="<%=poke.name%>" /> <br>
-        <h4>Type</h4>
-        <input type="text" name="type" value="<%=poke.type%>"/> <br>
-        <h4>Image</h4>
-        <input type="image url" name="img" value="<%=poke.img%>"> <br>
-        <h4>HP</h4>
-        <input type="text" name="stats" value="<%=poke.stats.hp%>"/> <br>
-        <h4>Attack</h4>
-        <input type="text" name="stats" value="<%=poke.stats.attack%>"/> <br>
-        <h4>Defense</h4>
-        <input type="text" name="stats" value="<%=poke.stats.defense%>"/> <br>
-        <h4>SP Attack</h4>
-        <input type="text" name="stats" value="<%=poke.stats.spattack%>"/><br>
-        <h4>SP Defense</h4>
-        <input type="text" name="stats" value="<%=poke.stats.spdefense%>"/><br>
-        <h4>Speed</h4>
-        <input type="text" name="stats" value="<%=poke.stats.speed%>"/><br>
-        <input type="submit" value="Pokémon Changed!">
+    <form id="editPg" action="/pokedex/<%= index %>?_method=PUT" method="POST">
+        <h5>Name</h5> <input type="text" name="name" value="<%=poke.name%>">
+
+        <h5>Type</h5><input type="text" name="type" value="<%=poke.type%>">
+
+        <h5>Image</h5><input type="image url" name="img" value="<%=poke.img%>">
+
+        <h5>HP</h5><input type="text" name="stats" value="<%=poke.stats.hp%>">
+
+        <h5>Attack</h5><input type="text" name="stats" value="<%=poke.stats.attack%>">
+
+        <h5>Defense</h5><input type="text" name="stats" value="<%=poke.stats.defense%>">
+
+        <h5>SP Attack</h5><input type="text" name="stats" value="<%=poke.stats.spattack%>">
+
+        <h5>SP Defense</h5><input type="text" name="stats" value="<%=poke.stats.spdefense%>">
+
+        <h5>Speed</h5><input type="text" name="stats" value="<%=poke.stats.speed%>">
+        <br>
+        <input id="changed" type="submit" value="Pokémon Changed!">
     
     </form>
 </body>

@@ -4,22 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/skeleton.css">
+    <link rel="stylesheet" href="/style.css">
+
     <title>Pokédex</title>
 </head>
 <body>
-    <div class="body">
-        <!-- HEADER -->
-        <%- include('./partials/header index.ejs')%>
-
-    <ul>
+    <div class="container">
+        <header>
+        <h1 id="header">Pokédex</h1>
+        </header>
+        <ul>
+            <!-- <li><a href="/pokedex">Pokédex</a></li> -->
+            <li id="new"><a id="newLink" href="/pokedex/new">New Pokémon</a></li>
+        </ul>
+    <ul id="line">
         <% for(let i=0; i < pokeData.length; i++) { %>
-            <a href="/pokedex/<%=i%>"><img src="<%=pokeData[i].img%>" alt="pokeData.name"></a>
-            <!-- edit button -->
-            <a href="/pokedex/<%=i%>/edit" id="change">Change</a>
-            <!-- delete -->
-            <form action="/pokedex/<%=i%>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete"/>
-            </form>
+            <div class="polaroid">
+            <figure>
+                <a id="pokeImg" href="/pokedex/<%=i%>"><img src="<%=pokeData[i].img%>" alt="pokeData.name"></a>
+            </figure>
+            </div>
+            <div id="buttons">
+                <!-- ====== EDIT ======= -->
+                <a href="/pokedex/<%=i%>/edit" id="change">Change</a>
+                <!-- ====== DELETE ====== -->
+                <form action="/pokedex/<%=i%>?_method=DELETE" method="POST">
+                    <input class="delete" type="submit" value="Delete"/>
+                </form>
+            </div>
         <% } %>
     </ul>
 
