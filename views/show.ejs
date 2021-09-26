@@ -22,11 +22,11 @@
             <li id="types">
                 <%=t%>
             </li>
-            <% }); %>
+        <% }); %>
             <h3>Stats</h3>
             <%Object.entries(pokeAll.stats).forEach(entry => {%>
                 <%const [key, value] = entry;%>
-            <li id="stats"><%=entry[0] = entry[0]%>: <%= entry[1] = entry[1]%></li>
+                <li id="stats"><%=entry[0] = entry[0]%>: <%= entry[1] = entry[1]%></li>
             <% }) %>
     </ul>
 

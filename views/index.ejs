@@ -14,7 +14,12 @@
     <ul>
         <% for(let i=0; i < pokeData.length; i++) { %>
             <a href="/pokedex/<%=i%>"><img src="<%=pokeData[i].img%>" alt="pokeData.name"></a>
+            <!-- edit button -->
             <a href="/pokedex/<%=i%>/edit" id="change">Change</a>
+            <!-- delete -->
+            <form action="/pokedex/<%=i%>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete"/>
+            </form>
         <% } %>
     </ul>
 

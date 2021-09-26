@@ -11,7 +11,7 @@
 <body>
     <h1>Change Pokémon</h1>
 
-    <form action="/pokedex/<%=index%>?_method=PUT" method="POST">
+    <form action="/pokedex/<%= index %>?_method=PUT" method="POST">
         <h4>Name</h4>
         <input type="text" name="name" value="<%=poke.name%>" /> <br>
         <h4>Type</h4>
@@ -23,14 +23,14 @@
         <h4>Attack</h4>
         <input type="text" name="stats" value="<%=poke.stats.attack%>"/> <br>
         <h4>Defense</h4>
-        <input type="text" name="stats" value="<%=poke.defense%>"/> <br>
-        <h4>SPAttack</h4>
-        <input type="text" name="stats" value="<%=poke.spattack%>"/><br>
-        <h4>SPDefense</h4>
-        <input type="text" name="stats" value="<%=poke.spdefense%>"/><br>
+        <input type="text" name="stats" value="<%=poke.stats.defense%>"/> <br>
+        <h4>SP Attack</h4>
+        <input type="text" name="stats" value="<%=poke.stats.spattack%>"/><br>
+        <h4>SP Defense</h4>
+        <input type="text" name="stats" value="<%=poke.stats.spdefense%>"/><br>
         <h4>Speed</h4>
-        <input type="text" name="stats" value="<%=poke.speed%>"/><br>
-        <input type="submit" value="Pokemon Changed!">
+        <input type="text" name="stats" value="<%=poke.stats.speed%>"/><br>
+        <input type="submit" value="Pokémon Changed!">
     
     </form>
 </body>
